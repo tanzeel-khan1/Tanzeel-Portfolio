@@ -11,7 +11,7 @@ export const profile = {
 
 export const stats = [
   { label: 'Years Building', value: '3+' },
-  { label: 'Projects Delivered (Demo)', value: '10+' },
+  { label: 'Delivered Projects', value: '10+' },
   { label: 'MERN Stack', value: 'Full-Stack' },
   { label: 'UX + Responsive', value: 'Premium' },
 ]
@@ -147,7 +147,7 @@ export const packages = [
   {
     title: 'Landing Page',
     price: 'From $20',
-    bullets: ['1 page', 'Premium UI/UX', 'Mobile-first', 'Fast delivery'],
+    bullets: ['2 pages', 'Premium UI/UX', 'Mobile-first', 'Fast delivery'],
     highlight: false,
   },
   {
