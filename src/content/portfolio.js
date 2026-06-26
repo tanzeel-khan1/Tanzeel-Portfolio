@@ -1,12 +1,12 @@
 export const profile = {
-  name: 'Tanzeel Khan',
+  name: 'Tanzil Khan',
   title: 'Full-Stack MERN Developer (Freelance)',
   intro:
     'I design and build premium websites and MERN web apps that look high-end, load fast, and convert visitors into customers.',
   location: 'Available for freelance • Remote',
-  email: 'tanzeel0680@gmail.com',
+  email: 'TanzilBuilds@outlook.com',
   linkedin: 'https://www.linkedin.com/in/tanzeel-khan-60601b301',
-  instagram: 'https://www.instagram.com/tanzeel3691',
+  instagram: 'https://www.instagram.com/tanzilbuilds',
 }
 
 export const stats = [
