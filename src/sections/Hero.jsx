@@ -1,4 +1,3 @@
-import { Suspense, lazy } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Sparkles } from 'lucide-react'
 import { profile } from '../content/portfolio'
@@ -7,24 +6,24 @@ import { useMedia } from '../lib/useMedia'
 import { Button } from '../components/ui/Button'
 import { Container } from '../components/ui/Container'
 
-const LazyThreeHeroBackground = lazy(() =>
-  import('../components/ThreeHeroBackground').then((m) => ({
-    default: m.ThreeHeroBackground,
-  })),
-)
-
 export function Hero() {
   const reduceMotion = useMedia('(prefers-reduced-motion: reduce)')
-  const isMobile = useMedia('(max-width: 640px)')
-  const quality = reduceMotion ? 'low' : isMobile ? 'low' : 'high'
 
   return (
-    <section id="top" className="relative">
-      {reduceMotion ? null : (
-        <Suspense fallback={null}>
-          <LazyThreeHeroBackground quality={quality} />
-        </Suspense>
+    <section id="top" className="relative overflow-hidden">
+
+      {/* 🔥 LIGHTWEIGHT BACKGROUND (no three.js) */}
+      {!reduceMotion && (
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0b0f1a] via-[#0f172a] to-[#0b0f1a]" />
+
+          {/* soft glowing blobs */}
+          <div className="absolute -top-40 -left-40 h-96 w-96 rounded-full bg-indigo-500/20 blur-3xl" />
+          <div className="absolute top-1/3 -right-40 h-96 w-96 rounded-full bg-pink-500/20 blur-3xl" />
+          <div className="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" />
+        </div>
       )}
+
       <Container className="relative pb-20 pt-14 sm:pb-24 sm:pt-20">
         <motion.div
           variants={stagger}
@@ -82,4 +81,3 @@ export function Hero() {
     </section>
   )
 }
-
