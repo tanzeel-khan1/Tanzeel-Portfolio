@@ -12,7 +12,7 @@ export const profile = {
 
 export const stats = [
   { label: 'Years Building', value: '3+' },
-  { label: 'Delivered Projects', value: '10+' },
+  { label: 'Projects', value: '10+' },
   { label: 'MERN Stack', value: 'Full-Stack' },
   { label: 'UX + Responsive', value: 'Premium' },
 ]
@@ -147,8 +147,8 @@ export const processSteps = [
 export const packages = [
   {
     title: 'Landing Page',
-    price: 'From $20',
-    bullets: ['2 pages', 'Premium UI/UX', 'Mobile-first', 'Fast delivery'],
+    price: 'From $30',
+    bullets: ['3 pages', 'Premium UI/UX', 'Mobile-first', 'Fast delivery'],
     highlight: false,
   },
   {
@@ -158,7 +158,7 @@ export const packages = [
     highlight: true,
   },
   {
-    title: 'MERN Web App',
+    title: 'Web App',
     price: 'Custom',
     bullets: ['Auth + dashboards', 'API + database', 'Admin panels', 'Scalable code'],
     highlight: false,

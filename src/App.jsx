@@ -31,7 +31,7 @@ export default function App() {
           <Services />
           <Packages />
           <WhyMe />
-          <Testimonials />
+          {/* <Testimonials /> */}
           <FAQ />
           <AuditCTA />
           <Contact />
