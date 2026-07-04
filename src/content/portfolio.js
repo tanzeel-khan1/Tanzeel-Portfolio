@@ -9,7 +9,6 @@ export const profile = {
   instagram: 'https://www.instagram.com/tanzilbuilds',
 }
 
-
 export const stats = [
   { label: 'Years Building', value: '3+' },
   { label: 'Projects', value: '10+' },
