@@ -1,5 +1,5 @@
 export const profile = {
-  name: 'Tanzil Khan',
+  name: 'Tanzil Builds',
   title: 'Full-Stack MERN Developer (Freelance)',
   intro:
     'I design and build premium websites and MERN web apps that look high-end, load fast, and convert visitors into customers.',
