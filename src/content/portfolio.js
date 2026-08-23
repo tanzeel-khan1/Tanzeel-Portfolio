@@ -54,12 +54,12 @@ export const projects = [
   //   githubUrl: 'https://github.com/your-handle/service-booking',
   // },
   {
-    title: 'Analytics Admin Dashboard',
+    title: 'Salon Website',
     description:
-      'Admin dashboard UI with modular components, charts-ready layout, and role-ready navigation patterns.',
-    stack: ['React', 'Tailwind', 'JWT'],
-    image: '/dash.png',
-    demoUrl: 'https://campaign-dashboard-mauve.vercel.app',
+      'Salon website with modular components, charts-ready layout, and role-ready navigation patterns.',
+    stack: ['React', 'Tailwind', ],
+    image: '/yoursalon.png',
+    demoUrl: 'https://yourstudia.netlify.app',
 
   },
   {
