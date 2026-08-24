@@ -1,4 +1,4 @@
-import { Mail, MessageCircle } from 'lucide-react'
+import { Mail, Phone } from 'lucide-react'
 import { FaGithub, FaInstagram, FaLinkedinIn } from 'react-icons/fa6'
 import { profile } from '../content/portfolio'
 import { Container } from './ui/Container'
@@ -6,6 +6,7 @@ import { Container } from './ui/Container'
 export function Footer() {
   const links = [
     { label: 'Email', href: `mailto:${profile.email}`, Icon: Mail },
+    { label: 'Phone', href: `tel:${profile.phone.replace(/[^+\d]/g, '')}`, Icon: Phone },
     { label: 'LinkedIn', href: profile.linkedin, Icon: FaLinkedinIn },
     { label: 'Instagram', href: profile.instagram, Icon: FaInstagram },
   ]
