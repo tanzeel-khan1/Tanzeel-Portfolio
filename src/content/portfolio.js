@@ -5,6 +5,7 @@ export const profile = {
     'I design and build premium websites and MERN web apps that look high-end, load fast, and convert visitors into customers.',
   location: 'Available for freelance • Remote',
   email: 'TanzilBuilds@outlook.com',
+  phone: '+1 208 843-3136',
   linkedin: 'https://www.linkedin.com/in/tanzeel-khan-60601b301',
   instagram: 'https://www.instagram.com/tanzilbuilds',
 }
