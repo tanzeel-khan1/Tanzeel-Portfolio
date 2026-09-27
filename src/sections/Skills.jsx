@@ -34,16 +34,16 @@ export function Skills() {
             const Icon = icons[g.title] ?? Code2
             return (
               <motion.div key={g.title} variants={fadeUp}>
-                <Card className="h-full p-6 transition hover:bg-white/7 hover:ring-white/14">
+                <Card className="h-full p-6 transition hover:bg-surface-2 hover:ring-line-strong">
                   <div className="flex items-center gap-3">
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/6 ring-1 ring-white/10">
-                      <Icon className="h-5 w-5 text-indigo-200" />
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-accent text-accent-fg">
+                      <Icon className="h-5 w-5" />
                     </span>
                     <div>
-                      <div className="text-sm font-semibold text-white/90">
+                      <div className="text-sm font-semibold text-ink">
                         {g.title}
                       </div>
-                      <div className="text-xs text-white/60">
+                      <div className="text-xs text-subtle">
                         Core tools I ship with
                       </div>
                     </div>
@@ -51,14 +51,14 @@ export function Skills() {
 
                   <div className="mt-5 flex flex-wrap gap-2">
                     {g.items.map((s) => (
-                      <Badge key={s} className="transition group-hover:bg-white/8">
+                      <Badge key={s} className="transition group-hover:bg-surface-4">
                         {s}
                       </Badge>
                     ))}
                   </div>
 
                   <div className="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
-                    <div className="absolute -right-16 -bottom-16 h-44 w-44 rounded-full bg-fuchsia-500/10 blur-2xl" />
+                    <div className="absolute -right-16 -bottom-16 h-44 w-44 rounded-full bg-glow blur-2xl" />
                   </div>
                 </Card>
               </motion.div>
@@ -69,4 +69,3 @@ export function Skills() {
     </section>
   )
 }
-

@@ -35,14 +35,14 @@ export function WhyMe() {
             const Icon = iconByTitle[d.title] ?? Sparkles
             return (
               <motion.div key={d.title} variants={fadeUp}>
-                <Card className="h-full p-6 transition hover:bg-white/7 hover:ring-white/14">
+                <Card className="h-full p-6 transition hover:bg-surface-2 hover:ring-line-strong">
                   <div className="flex items-center gap-3">
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/6 ring-1 ring-white/10">
-                      <Icon className="h-5 w-5 text-indigo-200" />
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-accent text-accent-fg">
+                      <Icon className="h-5 w-5" />
                     </span>
-                    <div className="text-sm font-semibold text-white/90">{d.title}</div>
+                    <div className="text-sm font-semibold text-ink">{d.title}</div>
                   </div>
-                  <p className="mt-3 text-sm leading-6 text-white/70">
+                  <p className="mt-3 text-sm leading-6 text-muted">
                     {d.description}
                   </p>
                 </Card>
@@ -54,4 +54,3 @@ export function WhyMe() {
     </section>
   )
 }
-

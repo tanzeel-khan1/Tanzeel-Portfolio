@@ -1,16 +1,24 @@
 import { cn } from '../../lib/cn'
 
 const base =
-  'inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium tracking-tight transition will-change-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#070A12] disabled:pointer-events-none disabled:opacity-60'
+  'inline-flex select-none items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium tracking-tight ' +
+  'transition duration-200 ease-out will-change-transform active:translate-y-0 ' +
+  'disabled:pointer-events-none disabled:opacity-60'
 
 const variants = {
   primary:
-    'bg-gradient-to-b from-white/14 to-white/6 text-white shadow-[0_10px_30px_-12px_rgba(99,102,241,0.55)] ring-1 ring-white/12 hover:translate-y-[-1px] hover:ring-white/18',
+    'bg-accent text-accent-fg shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_10px_24px_-14px_rgba(0,0,0,0.55)] ' +
+    'hover:-translate-y-px hover:opacity-90',
   ghost:
-    'bg-white/5 text-white ring-1 ring-white/10 hover:bg-white/8 hover:ring-white/14 hover:translate-y-[-1px]',
+    'bg-page text-ink ring-1 ring-line hover:-translate-y-px hover:bg-surface-3 hover:ring-line-strong',
+  inverse:
+    'bg-accent-fg text-accent shadow-[0_10px_24px_-14px_rgba(0,0,0,0.4)] ' +
+    'hover:-translate-y-px hover:opacity-90',
+  'inverse-ghost':
+    'border border-accent-fg/30 bg-transparent text-accent-fg ring-1 ring-accent-fg/30 ' +
+    'hover:-translate-y-px hover:bg-accent-fg/10 hover:ring-accent-fg/50',
 }
 
 export function Button({ as: Comp = 'a', variant = 'primary', className, ...props }) {
   return <Comp className={cn(base, variants[variant], className)} {...props} />
 }
-

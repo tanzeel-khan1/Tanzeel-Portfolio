@@ -25,14 +25,14 @@ export function FAQ() {
         >
           {faqs.map((f) => (
             <motion.div key={f.q} variants={fadeUp}>
-              <Card className="h-full p-6 transition hover:bg-white/7 hover:ring-white/14">
+              <Card className="h-full p-6 transition hover:bg-surface-2 hover:ring-line-strong">
                 <div className="flex items-start gap-3">
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/6 ring-1 ring-white/10">
-                    <HelpCircle className="h-5 w-5 text-indigo-200" />
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-accent text-accent-fg">
+                    <HelpCircle className="h-5 w-5" />
                   </span>
                   <div>
-                    <div className="text-sm font-semibold text-white/90">{f.q}</div>
-                    <p className="mt-2 text-sm leading-6 text-white/70">{f.a}</p>
+                    <div className="text-sm font-semibold text-ink">{f.q}</div>
+                    <p className="mt-2 text-sm leading-6 text-muted">{f.a}</p>
                   </div>
                 </div>
               </Card>
@@ -43,4 +43,3 @@ export function FAQ() {
     </section>
   )
 }
-

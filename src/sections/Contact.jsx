@@ -1,11 +1,7 @@
 import { useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
-import {
-  Mail,
-  MessageCircle,
-  Send,
-} from 'lucide-react'
-import { FaGithub, FaInstagram, FaLinkedinIn } from 'react-icons/fa6'
+import { Mail, Send } from 'lucide-react'
+import { FaFacebook, FaInstagram, FaLinkedinIn } from 'react-icons/fa6'
 import { profile } from '../content/portfolio'
 import { fadeUp, stagger } from '../lib/motion'
 import { Container } from '../components/ui/Container'
@@ -39,9 +35,12 @@ export function Contact() {
 
   const socials = [
     { label: 'Email', href: `mailto:${profile.email}`, Icon: Mail },
-    { label: 'LinkedIn', href: profile.linkedin, Icon: FaLinkedinIn },
+    { label: 'LinkedIn', href: profile.facebook, Icon: FaFacebook },
     { label: 'Instagram', href: profile.instagram, Icon: FaInstagram },
   ]
+
+  const fieldClass =
+    'rounded-2xl bg-page px-4 text-sm text-ink ring-1 ring-line outline-none transition placeholder:text-subtle focus:ring-accent/40'
 
   return (
     <section id="contact" className="relative py-16 sm:py-24">
@@ -61,41 +60,41 @@ export function Contact() {
         >
           <motion.div variants={fadeUp}>
             <Card className="h-full p-7 sm:p-8">
-              <div className="text-sm font-semibold text-white/90">
+              <div className="text-sm font-semibold text-ink">
                 Request a quote
               </div>
-              <p className="mt-2 text-sm leading-6 text-white/65">
+              <p className="mt-2 text-sm leading-6 text-subtle">
                 This opens your email client (no backend needed).
               </p>
 
               <div className="mt-6 grid gap-3">
                 <label className="grid gap-2">
-                  <span className="text-xs font-medium text-white/70">Name</span>
+                  <span className="text-xs font-medium text-muted">Name</span>
                   <input
                     value={form.name}
                     onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-                    className="h-11 rounded-2xl bg-white/5 px-4 text-sm text-white/90 ring-1 ring-white/10 outline-none transition placeholder:text-white/35 focus:ring-indigo-400/40"
+                    className={`h-11 ${fieldClass}`}
                     placeholder="Your name"
                   />
                 </label>
                 <label className="grid gap-2">
-                  <span className="text-xs font-medium text-white/70">Email</span>
+                  <span className="text-xs font-medium text-muted">Email</span>
                   <input
                     value={form.email}
                     onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-                    className="h-11 rounded-2xl bg-white/5 px-4 text-sm text-white/90 ring-1 ring-white/10 outline-none transition placeholder:text-white/35 focus:ring-indigo-400/40"
+                    className={`h-11 ${fieldClass}`}
                     placeholder="you@email.com"
                     inputMode="email"
                   />
                 </label>
                 <label className="grid gap-2">
-                  <span className="text-xs font-medium text-white/70">Message</span>
+                  <span className="text-xs font-medium text-muted">Message</span>
                   <textarea
                     value={form.message}
                     onChange={(e) =>
                       setForm((f) => ({ ...f, message: e.target.value }))
                     }
-                    className="min-h-[130px] resize-none rounded-2xl bg-white/5 px-4 py-3 text-sm text-white/90 ring-1 ring-white/10 outline-none transition placeholder:text-white/35 focus:ring-indigo-400/40"
+                    className={`min-h-[130px] resize-none py-3 ${fieldClass}`}
                     placeholder="What do you need? (pages/features), your business, and deadline..."
                   />
                 </label>
@@ -109,10 +108,10 @@ export function Contact() {
 
           <motion.div variants={fadeUp}>
             <Card className="h-full p-7 sm:p-8">
-              <div className="text-sm font-semibold text-white/90">
+              <div className="text-sm font-semibold text-ink">
                 Quick links
               </div>
-              <p className="mt-2 text-sm leading-6 text-white/65">
+              <p className="mt-2 text-sm leading-6 text-subtle">
                 Prefer direct contact? Choose your channel.
               </p>
 
@@ -123,16 +122,16 @@ export function Contact() {
                     href={href}
                     target={href.startsWith('http') ? '_blank' : undefined}
                     rel={href.startsWith('http') ? 'noreferrer' : undefined}
-                    className="group flex items-center gap-3 rounded-2xl bg-white/5 p-4 ring-1 ring-white/10 transition hover:bg-white/7 hover:ring-white/14"
+                    className="group flex items-center gap-3 rounded-2xl bg-surface-2 p-4 ring-1 ring-line transition hover:bg-surface-3 hover:ring-line-strong"
                   >
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/6 ring-1 ring-white/10">
-                      <Icon className="h-5 w-5 text-indigo-200" />
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-accent text-accent-fg">
+                      <Icon className="h-5 w-5" />
                     </span>
                     <div>
-                      <div className="text-sm font-semibold text-white/90">
+                      <div className="text-sm font-semibold text-ink">
                         {label}
                       </div>
-                      <div className="text-xs text-white/60">
+                      <div className="text-xs text-subtle">
                         {label === 'Email' ? profile.email : 'Open'}
                       </div>
                     </div>
@@ -140,9 +139,11 @@ export function Contact() {
                 ))}
               </div>
 
-              <div className="mt-6 rounded-2xl bg-white/4 p-4 ring-1 ring-white/10">
-                <div className="text-xs font-medium text-white/60">Availability</div>
-                <div className="mt-1 text-sm text-white/80">
+              <div className="mt-6 rounded-2xl bg-surface-2 p-4 ring-1 ring-line">
+                <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-subtle">
+                  Availability
+                </div>
+                <div className="mt-1 text-sm text-muted">
                   Available for freelance — websites, landing pages & MERN apps.
                 </div>
               </div>
@@ -153,4 +154,3 @@ export function Contact() {
     </section>
   )
 }
-
