@@ -25,15 +25,15 @@ export function Testimonials() {
         >
           {testimonials.map((t) => (
             <motion.div key={t.name + t.role} variants={fadeUp}>
-              <Card className="h-full p-7 transition hover:bg-white/7 hover:ring-white/14">
+              <Card className="h-full p-7 transition hover:bg-surface-2 hover:ring-line-strong">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <div className="text-sm font-semibold text-white/90">{t.name}</div>
-                    <div className="mt-1 text-xs text-white/60">{t.role}</div>
+                    <div className="text-sm font-semibold text-ink">{t.name}</div>
+                    <div className="mt-1 text-xs text-subtle">{t.role}</div>
                   </div>
-                  <Quote className="h-5 w-5 text-indigo-200/80" />
+                  <Quote className="h-5 w-5 text-subtle" />
                 </div>
-                <p className="mt-4 text-sm leading-6 text-white/75">“{t.quote}”</p>
+                <p className="mt-4 text-sm leading-6 text-muted">“{t.quote}”</p>
               </Card>
             </motion.div>
           ))}
@@ -42,4 +42,3 @@ export function Testimonials() {
     </section>
   )
 }
-

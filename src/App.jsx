@@ -11,13 +11,12 @@ import { Packages } from './sections/Packages'
 import { Services } from './sections/Services'
 import { Skills } from './sections/Skills'
 import { Stats } from './sections/Stats'
-import { Testimonials } from './sections/Testimonials'
 import { WhyMe } from './sections/WhyMe'
 import { FAQ } from './sections/FAQ'
 
 export default function App() {
   return (
-    <div className="relative min-h-screen bg-[#070A12]">
+    <div className="relative min-h-screen bg-page text-ink">
       <GlowBackdrop />
       <div className="relative">
         <Navbar />
@@ -31,7 +30,6 @@ export default function App() {
           <Services />
           <Packages />
           <WhyMe />
-          {/* <Testimonials /> */}
           <FAQ />
           <AuditCTA />
           <Contact />

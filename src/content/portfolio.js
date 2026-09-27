@@ -3,10 +3,10 @@ export const profile = {
   title: 'Full-Stack MERN Developer (Freelance)',
   intro:
     'I design and build premium websites and MERN web apps that look high-end, load fast, and convert visitors into customers.',
-  location: 'Available for freelance • Remote',
+  // location: 'Available for freelance • Remote',
   email: 'Contact@tanzilbuilds.xyz',
-  phone: '+1 208 843-3136',
-  linkedin: 'https://www.linkedin.com/in/tanzeel-khan-60601b301',
+  // phone: '+1 208 843-3136',acha mujhe batao ky hum isky under OR kia 
+  facebook: 'https://www.facebook.com/profile.php?id=61592887993565#',
   instagram: 'https://www.instagram.com/tanzilbuilds',
 }
 

@@ -29,19 +29,19 @@ export function Packages() {
             <motion.div key={p.title} variants={fadeUp}>
               <Card
                 className={cn(
-                  'h-full p-7 transition hover:bg-white/7 hover:ring-white/14',
-                  p.highlight ? 'ring-indigo-400/30' : '',
+                  'h-full p-7 transition hover:bg-surface-2 hover:ring-line-strong',
+                  p.highlight ? 'border-2 border-accent' : '',
                 )}
               >
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <div className="text-sm font-semibold text-white/90">{p.title}</div>
-                    <div className="mt-2 text-3xl font-semibold tracking-tight text-white">
+                    <div className="text-sm font-semibold text-ink">{p.title}</div>
+                    <div className="mt-2 text-3xl font-semibold tabular-nums tracking-[-0.03em] text-ink">
                       {p.price}
                     </div>
                   </div>
                   {p.highlight ? (
-                    <div className="inline-flex items-center gap-2 rounded-full bg-indigo-500/15 px-3 py-1 text-xs font-medium text-indigo-100 ring-1 ring-indigo-400/20">
+                    <div className="inline-flex items-center gap-2 rounded-full bg-accent px-3 py-1 font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-accent-fg">
                       <Star className="h-4 w-4" />
                       Most popular
                     </div>
@@ -50,9 +50,9 @@ export function Packages() {
 
                 <div className="mt-6 grid gap-3">
                   {p.bullets.map((b) => (
-                    <div key={b} className="flex items-center gap-2 text-sm text-white/75">
-                      <span className="inline-flex h-6 w-6 items-center justify-center rounded-lg bg-white/6 ring-1 ring-white/10">
-                        <Check className="h-4 w-4 text-indigo-200" />
+                    <div key={b} className="flex items-center gap-2 text-sm text-muted">
+                      <span className="inline-flex h-6 w-6 items-center justify-center rounded-lg bg-surface-3 text-ink ring-1 ring-line">
+                        <Check className="h-4 w-4" />
                       </span>
                       <span className="min-w-0">{b}</span>
                     </div>
@@ -70,4 +70,3 @@ export function Packages() {
     </section>
   )
 }
-

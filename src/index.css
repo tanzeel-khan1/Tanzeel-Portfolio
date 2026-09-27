@@ -1,18 +1,120 @@
 @import "tailwindcss";
 
+/* ---------------------------------------------------------------
+   Theme tokens — light is the default, [data-theme="dark"] overrides
+   --------------------------------------------------------------- */
+:root {
+  --page: #ffffff;
+  --ink: #0b0b0b;
+  --muted: #525252;
+  --subtle: #6f6f6f;
+  --surface: #ffffff;
+  --surface-2: #fafafa;
+  --surface-3: #f4f4f4;
+  --surface-4: #e7e7e7;
+  --line: rgb(11 11 11 / 0.1);
+  --line-strong: rgb(11 11 11 / 0.24);
+  --accent: #0b0b0b;
+  --accent-fg: #ffffff;
+  --glow: #f1f1f1;
+}
+
+[data-theme="dark"] {
+  --page: #0a0a0a;
+  --ink: #f7f7f7;
+  --muted: #a1a1a1;
+  --subtle: #8a8a8a;
+  --surface: #101010;
+  --surface-2: #161616;
+  --surface-3: #202020;
+  --surface-4: #2b2b2b;
+  --line: rgb(255 255 255 / 0.12);
+  --line-strong: rgb(255 255 255 / 0.28);
+  --accent: #f7f7f7;
+  --accent-fg: #0a0a0a;
+  --glow: rgb(255 255 255 / 0.045);
+}
+
+@theme inline {
+  --font-sans:
+    'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono:
+    'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --color-page: var(--page);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-surface-4: var(--surface-4);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-glow: var(--glow);
+}
+
 /* Global polish */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 88px; /* sticky navbar offset */
+  -webkit-text-size-adjust: 100%;
+  scrollbar-color: var(--line-strong) transparent;
 }
 
 body {
-  background: #070A12;
-  color: rgba(255, 255, 255, 0.92);
+  background: var(--page);
+  color: var(--ink);
+  font-optical-sizing: auto;
+  font-feature-settings: 'cv11' 1, 'ss01' 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background: rgba(99, 102, 241, 0.28);
+  background: var(--ink);
+  color: var(--page);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* Themed scrollbar */
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--line-strong);
+  border: 3px solid var(--page);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--muted);
+}
+
+/* Smooth theme switch, applied for a few frames while toggling */
+.theme-anim,
+.theme-anim *,
+.theme-anim *::before,
+.theme-anim *::after {
+  transition:
+    background-color 260ms ease,
+    border-color 260ms ease,
+    color 260ms ease,
+    fill 260ms ease,
+    box-shadow 260ms ease !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
