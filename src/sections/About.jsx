@@ -23,7 +23,7 @@ export function About() {
           className="mt-10"
         >
           <Card className="p-7 sm:p-8">
-            <p className="text-pretty text-sm leading-6 text-white/75 sm:text-base sm:leading-7">
+            <p className="text-pretty text-sm leading-6 text-muted sm:text-base sm:leading-7">
               {about}
             </p>
             <div className="mt-6 grid gap-3 sm:grid-cols-3">
@@ -34,10 +34,12 @@ export function About() {
               ].map((it) => (
                 <div
                   key={it.k}
-                  className="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10"
+                  className="rounded-2xl bg-surface-2 p-4 ring-1 ring-line"
                 >
-                  <div className="text-xs font-medium text-white/60">{it.k}</div>
-                  <div className="mt-1 text-sm font-semibold text-white/90">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-subtle">
+                    {it.k}
+                  </div>
+                  <div className="mt-1 text-sm font-semibold text-ink">
                     {it.v}
                   </div>
                 </div>
@@ -49,4 +51,3 @@ export function About() {
     </section>
   )
 }
-
