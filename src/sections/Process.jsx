@@ -13,9 +13,9 @@ export function Process() {
     <section className="relative py-16 sm:py-24">
       <Container>
         <SectionHeading
-          eyebrow="How I work"
-          title="A clear freelance process (no confusion)."
-          desc="Simple steps, quick updates, and premium delivery—so you always know what’s happening."
+          eyebrow="The Process"
+          title="A simple path from idea to launch."
+          desc="No jargon, no confusion—just clear steps, quick updates, and premium delivery."
         />
 
         <motion.div
@@ -23,26 +23,37 @@ export function Process() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
-          className="mt-10 grid gap-4 md:grid-cols-2"
+          className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4"
         >
           {processSteps.map((s, i) => {
             const Icon = icons[i] ?? Sparkles
             return (
               <motion.div key={s.title} variants={fadeUp}>
-                <Card className="h-full p-6 transition hover:bg-surface-2 hover:ring-line-strong">
-                  <div className="flex items-start gap-3">
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-accent text-accent-fg">
+                <Card className="relative h-full p-6">
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute -right-1 top-0 font-mono text-6xl font-semibold tracking-tighter text-ink/[0.05]"
+                  >
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+
+                  <div className="relative flex items-start gap-3">
+                    <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-accent text-accent-fg shadow-soft ring-1 ring-line">
                       <Icon className="h-5 w-5" />
                     </span>
                     <div className="min-w-0">
-                      <div className="text-sm font-semibold text-ink">
-                        {String(i + 1).padStart(2, '0')}. {s.title}
+                      <div className="font-mono text-[10px] uppercase tracking-[0.16em] text-subtle">
+                        Step {String(i + 1).padStart(2, '0')}
                       </div>
-                      <p className="mt-2 text-sm leading-6 text-muted">
-                        {s.description}
-                      </p>
+                      <div className="mt-1 text-sm font-semibold text-ink">
+                        {s.title}
+                      </div>
                     </div>
                   </div>
+
+                  <p className="relative mt-4 text-sm leading-6 text-muted">
+                    {s.description}
+                  </p>
                 </Card>
               </motion.div>
             )

@@ -1,89 +1,69 @@
 export const profile = {
   name: 'Tanzil Builds',
-  title: 'Full-Stack MERN Developer (Freelance)',
+  title: ' Full-Stack Developer',
+  headline: 'Websites that grow your business. Systems that simplify it.',
   intro:
-    'I design and build premium websites and MERN web apps that look high-end, load fast, and convert visitors into customers.',
-  // location: 'Available for freelance • Remote',
+    'I build premium websites that bring in more customers and custom systems that take repetitive work off your plate—so you can focus on running and growing your business.',
   email: 'Contact@tanzilbuilds.xyz',
-  // phone: '+1 208 843-3136',acha mujhe batao ky hum isky under OR kia 
   facebook: 'https://www.facebook.com/profile.php?id=61592887993565#',
   instagram: 'https://www.instagram.com/tanzilbuilds',
 }
 
 export const stats = [
   { label: 'Years Building', value: '3+' },
-  { label: 'Projects', value: '10+' },
-  { label: 'MERN Stack', value: 'Full-Stack' },
-  { label: 'UX + Responsive', value: 'Premium' },
+  { label: 'Projects Delivered', value: '10+' },
+  { label: 'Focus', value: 'Growth' },
+  { label: 'Approach', value: 'Client-first' },
 ]
 
 export const about =
-  "I’m a Full-Stack MERN developer focused on building client-ready websites and scalable web apps. My approach is simple: premium UI/UX, clean code, and business-first execution—so your site feels high-end, works perfectly on mobile, and supports your growth. Whether you need a conversion-focused landing page, a business website, or a complete MERN product, I can take you from idea to a polished launch."
+  'I’m Tanzil, a full-stack developer who builds premium websites and custom systems for growing businesses. My focus isn’t just clean design—it’s results. If you need a website, I build one that looks high-end, loads fast, and turns visitors into paying customers. If you need a system, I build tools that automate the repetitive parts of your work so your team saves time and makes fewer mistakes. From first idea to launch, I handle the technical side so you can focus on your business.'
 
 export const skillGroups = [
   {
-    title: 'Frontend',
-    items: ['React.js', 'Tailwind CSS', 'JavaScript', 'Framer Motion'],
+    title: 'Websites',
+    items: ['Business Websites', 'Landing Pages', 'Online Stores', 'Redesigns'],
   },
   {
-    title: 'Backend',
-    items: ['Node.js', 'Express.js', 'MongoDB', 'JWT Authentication'],
+    title: 'Systems',
+    items: ['Booking Systems', 'Admin Dashboards', 'Customer Portals', 'Automation'],
   },
   {
-    title: 'Tools',
-    items: ['GitHub', 'Firebase', 'Vercel', 'Render'],
+    title: 'Reliability',
+    items: ['Fast load times', 'Mobile-friendly', 'Secure', 'Scalable'],
   },
 ]
 
 export const projects = [
-  // {
-  //   title: 'Fitness Coach Website',
-  //   description:
-  //     'A premium marketing site with smooth animations, lead capture, and mobile-first layout for a fitness coach brand.',
-  //   stack: ['React', 'Tailwind', 'Framer Motion'],
-  //   image: '/projects/fitness-coach.jpg',
-  //   demoUrl: 'https://example.com',
-  //   githubUrl: 'https://github.com/your-handle/fitness-coach',
-  // },
-  // {
-  //   title: 'Local Service Booking Website',
-  //   description:
-  //     'Service listings, scheduling UI, and conversion-focused landing flow built for local businesses.',
-  //   stack: ['React', 'Node', 'MongoDB'],
-  //   image: '/projects/service-booking.jpg',
-  //   demoUrl: 'https://example.com',
-  //   githubUrl: 'https://github.com/your-handle/service-booking',
-  // },
   {
     title: 'Salon Website',
     description:
-      'Salon website with modular components, charts-ready layout, and role-ready navigation patterns.',
-    stack: ['React', 'Tailwind', ],
+      'A premium booking website for a modern salon—clients explore services and book appointments effortlessly, while the brand looks high-end.',
+    stack: ['Website', 'Booking Flow', 'Mobile-friendly'],
     image: '/yoursalon.png',
     demoUrl: 'https://yourstudia.netlify.app',
-
   },
   {
     title: 'Clothing Brand',
     description:
-      'Clothing brand website with smooth animations, lead capture, and mobile-first layout for a clothing brand.',
-    stack: ['React', 'API', 'Tailwind'],
+      'A fashion-forward online store with smooth motion and a clean shopping flow that turns visitors into customers.',
+    stack: ['Online Store', 'Motion', 'Mobile-first'],
     image: 'clo.png',
     demoUrl: 'https://clothing-brand-demo-plum.vercel.app',
   },
   {
     title: 'Doctor Appointment Booking',
     description:
-      'Doctor appointment booking website with smooth animations, lead capture, and mobile-first layout for a doctor appointment booking.',
-    stack: ['MERN', 'Animations'],
+      'An easy appointment booking system for a clinic—patients book in seconds while the team manages everything in one place.',
+    stack: ['System', 'Booking UX', 'Admin Panel'],
     image: '/doc.png',
     demoUrl: 'https://doctor-app-indol.vercel.app',
   },
   {
     title: 'Real Estate Website',
     description:
-      'Real estate website with smooth animations, lead capture, and mobile-first layout for a real estate website.',
-    stack: ['Next js', 'tailwind', 'Animations'],
+      'A premium property website with smart filters and quick enquiry flows that help agents turn browsers into buyers.',
+    stack: ['Website', 'Property Listings', 'Enquiry Flow'],
     image: '/real.png',
     demoUrl: 'https://real-estate-7mef.vercel.app',
   },
@@ -92,55 +72,55 @@ export const projects = [
 export const services = [
   'Business Websites',
   'High-Converting Landing Pages',
-  'Portfolio Websites',
-  'MERN Stack Apps',
+  'Booking & Enquiry Systems',
   'Admin Dashboards',
-  'Website Redesigns & UI Upgrades',
+  'Customer Portals',
+  'Website Redesigns & Upgrades',
 ]
 
 export const differentiators = [
   {
-    title: 'Clean UI',
-    description: 'Minimal, premium interfaces with clear hierarchy and spacing.',
+    title: 'Design that builds trust',
+    description: 'A polished, premium look that makes customers take you seriously.',
   },
   {
-    title: 'Responsive Design',
-    description: 'Flawless layouts across mobile, tablet, and desktop screens.',
+    title: 'Built to grow',
+    description: 'Websites and systems that can expand as your business does.',
   },
   {
-    title: 'Fast Performance',
-    description: 'Optimized assets, smooth interactions, and scalable structure.',
+    title: 'Easy to use',
+    description: 'Simple interfaces your customers and team actually enjoy using.',
   },
   {
-    title: 'Professional Communication',
-    description: 'Clear updates, quick iterations, and reliable delivery.',
+    title: 'Clear communication',
+    description: 'Plain-English updates, quick replies, and no confusing jargon.',
   },
   {
-    title: 'Modern UX',
-    description: 'Polished details—hover states, micro-interactions, and flow.',
+    title: 'Reliable delivery',
+    description: 'Clear timelines, careful testing, and support after launch.',
   },
 ]
 
 export const processSteps = [
   {
-    title: 'Quick call + requirements',
+    title: 'Quick call',
     description:
-      'We align on goals, pages/features, timeline, and your brand style. You’ll get a clear scope.',
+      'We talk about your goals, your customers, and what would make the biggest difference—then agree on scope and timeline.',
   },
   {
-    title: 'Premium UI design + copy structure',
+    title: 'Plan & design',
     description:
-      'I craft a clean layout with conversion-focused sections, smooth interactions, and mobile-first spacing.',
+      'I map out the pages or features you need and design a clean, premium experience that makes it easy for people to act.',
   },
   {
-    title: 'Build (React + Tailwind + MERN)',
+    title: 'Build & test',
     description:
-      'Production-ready frontend and backend (if needed) with clean code, performance, and responsive QA.',
+      'I build the website or system, test it on every screen, and make sure it feels fast and simple for real users.',
   },
   {
-    title: 'Launch + support',
+    title: 'Launch & support',
     description:
-      'Deploy on Vercel/Render, connect domain, and ship with handover notes. Post-launch tweaks included.',
+      'I launch it, connect your domain, and stay available for tweaks—so everything keeps running smoothly.',
   },
 ]
 
@@ -148,19 +128,19 @@ export const packages = [
   {
     title: 'Landing Page',
     price: 'From $30',
-    bullets: ['3 pages', 'Premium UI/UX', 'Mobile-first', 'Fast delivery'],
+    bullets: ['1–3 sections', 'Premium design', 'Mobile-friendly', 'Fast delivery'],
     highlight: false,
   },
   {
     title: 'Business Website',
     price: 'From $60',
-    bullets: ['3–6 pages', 'SEO-ready structure', 'Animations', 'Contact + CTA'],
+    bullets: ['3–6 pages', 'Built to convert', 'Smooth animations', 'Contact + CTA'],
     highlight: true,
   },
   {
-    title: 'Web App',
+    title: 'Custom System',
     price: 'Custom',
-    bullets: ['Auth + dashboards', 'API + database', 'Admin panels', 'Scalable code'],
+    bullets: ['Built around your workflow', 'Admin dashboard', 'Automated tasks', 'Room to scale'],
     highlight: false,
   },
 ]
@@ -168,40 +148,43 @@ export const packages = [
 export const testimonials = [
   {
     name: 'John',
-    role: 'Small Business Owner',
+    role: 'Business Owner',
     quote:
-      'The website looks premium and works perfectly on mobile. Communication was clear and delivery was fast.',
+      'My new website brings in more enquiries every week. It finally looks as professional as the work we do.',
   },
   {
     name: 'Alexa',
     role: 'Startup Founder',
     quote:
-      'Great UI/UX and clean implementation. The landing page improved our conversions and load speed.',
+      'The website made our brand look established from day one. Clients take us more seriously now, and the enquiry flow is much better.',
   },
   {
     name: 'Babar',
-    role: 'Creator',
+    role: 'Creative Director',
     quote:
-      'Super smooth animations and professional design. Exactly the high-end look I wanted.',
+      'The system I had built saves the team hours every week. Everything is finally in one place and easy to manage.',
   },
 ]
 
 export const faqs = [
   {
-    q: 'How fast can you deliver?',
-    a: 'Landing pages typically take 3–5 days. Multi-page sites and MERN apps depend on scope and features.',
+    q: 'How long does a website take?',
+    a: 'A landing page usually takes 3–5 days. A full business website or custom system depends on the pages and features—I’ll give you a clear timeline upfront.',
   },
   {
-    q: 'Do you provide hosting + domain setup?',
-    a: 'Yes. I can deploy on Vercel/Render and help connect your domain with best-practice settings.',
+    q: 'Can you build a system for my business?',
+    a: 'Yes. If you’re managing bookings, orders, customers, or internal tasks manually, I can build a custom system that automates the busywork and saves your team time.',
   },
   {
-    q: 'Can you redesign my existing site?',
-    a: 'Yes. I can upgrade your UI, improve responsiveness, and optimize performance while keeping your content.',
+    q: 'Will my website bring more customers?',
+    a: 'That’s the goal. I design with clear calls to action and a smooth experience, so visitors know what to do and are more likely to contact you or buy.',
   },
   {
-    q: 'Do you work with fixed price or hourly?',
-    a: 'Both. For most projects I recommend a fixed-price package with a clear scope and timeline.',
+    q: 'Do you handle hosting and domain?',
+    a: 'Yes. I handle deployment and connect your domain, so your website is live and ready without you dealing with the technical setup.',
+  },
+  {
+    q: 'What if I need changes after launch?',
+    a: 'I include post-launch support for small tweaks, and I’m happy to help with bigger updates as your business grows.',
   },
 ]
-

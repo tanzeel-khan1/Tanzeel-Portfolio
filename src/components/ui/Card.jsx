@@ -4,10 +4,14 @@ export function Card({ className, ...props }) {
   return (
     <div
       className={cn(
-        'group relative overflow-hidden rounded-2xl bg-surface p-6 ring-1 ring-line',
-        'shadow-[0_1px_2px_rgba(0,0,0,0.04),0_16px_36px_-28px_rgba(0,0,0,0.3)]',
-        'transition duration-300 ease-out',
-        'hover:-translate-y-0.5 hover:shadow-[0_2px_4px_rgba(0,0,0,0.05),0_28px_56px_-30px_rgba(0,0,0,0.4)]',
+        'group relative isolate overflow-hidden rounded-2xl bg-surface ring-1 ring-line',
+        'shadow-soft transition duration-300 ease-out',
+        'before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-px',
+        'before:bg-[linear-gradient(90deg,transparent,var(--line-strong),transparent)]',
+        'after:pointer-events-none after:absolute after:-inset-px after:-z-10 after:rounded-2xl after:opacity-0',
+        'after:bg-[radial-gradient(520px_circle_at_50%_0%,var(--glow),transparent_72%)]',
+        'after:transition-opacity after:duration-500',
+        'hover:-translate-y-1 hover:shadow-lift hover:ring-line-strong hover:after:opacity-100',
         className,
       )}
       {...props}

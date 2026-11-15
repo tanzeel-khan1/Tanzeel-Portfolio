@@ -5,8 +5,11 @@ import { cn } from '../lib/cn'
 import { fadeUp, stagger } from '../lib/motion'
 import { Container } from '../components/ui/Container'
 import { SectionHeading } from '../components/ui/SectionHeading'
-import { Card } from '../components/ui/Card'
 import { Button } from '../components/ui/Button'
+
+const cardBase =
+  'group relative isolate flex h-full flex-col overflow-hidden rounded-2xl p-7 ring-1 ' +
+  'transition duration-300 ease-out hover:-translate-y-1'
 
 export function Packages() {
   return (
@@ -14,8 +17,8 @@ export function Packages() {
       <Container>
         <SectionHeading
           eyebrow="Packages"
-          title="Simple pricing to start (custom for bigger builds)."
-          desc="Pick a starting point—final quote depends on pages/features, integrations, and timeline."
+          title="Clear starting points for every goal."
+          desc="Whether you’re building your online presence or simplifying your operations, there’s a fit."
         />
 
         <motion.div
@@ -25,46 +28,91 @@ export function Packages() {
           viewport={{ once: true, amount: 0.25 }}
           className="mt-10 grid gap-4 lg:grid-cols-3"
         >
-          {packages.map((p) => (
-            <motion.div key={p.title} variants={fadeUp}>
-              <Card
-                className={cn(
-                  'h-full p-7 transition hover:bg-surface-2 hover:ring-line-strong',
-                  p.highlight ? 'border-2 border-accent' : '',
-                )}
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <div className="text-sm font-semibold text-ink">{p.title}</div>
-                    <div className="mt-2 text-3xl font-semibold tabular-nums tracking-[-0.03em] text-ink">
-                      {p.price}
-                    </div>
-                  </div>
-                  {p.highlight ? (
-                    <div className="inline-flex items-center gap-2 rounded-full bg-accent px-3 py-1 font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-accent-fg">
-                      <Star className="h-4 w-4" />
-                      Most popular
-                    </div>
+          {packages.map((p) => {
+            const hi = p.highlight
+            return (
+              <motion.div key={p.title} variants={fadeUp} className="h-full">
+                <div
+                  className={cn(
+                    cardBase,
+                    hi
+                      ? 'bg-accent text-accent-fg shadow-lift ring-accent'
+                      : 'bg-surface shadow-soft ring-line hover:bg-surface-2 hover:shadow-lift hover:ring-line-strong',
+                  )}
+                >
+                  {hi ? (
+                    <div
+                      aria-hidden
+                      className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-accent-fg/10 blur-2xl"
+                    />
                   ) : null}
-                </div>
 
-                <div className="mt-6 grid gap-3">
-                  {p.bullets.map((b) => (
-                    <div key={b} className="flex items-center gap-2 text-sm text-muted">
-                      <span className="inline-flex h-6 w-6 items-center justify-center rounded-lg bg-surface-3 text-ink ring-1 ring-line">
-                        <Check className="h-4 w-4" />
-                      </span>
-                      <span className="min-w-0">{b}</span>
+                  <div className="relative flex items-start justify-between gap-4">
+                    <div>
+                      <div
+                        className={cn(
+                          'text-sm font-semibold',
+                          hi ? 'text-accent-fg' : 'text-ink',
+                        )}
+                      >
+                        {p.title}
+                      </div>
+                      <div
+                        className={cn(
+                          'mt-2 text-3xl font-semibold tabular-nums tracking-[-0.03em]',
+                          hi ? 'text-accent-fg' : 'text-ink',
+                        )}
+                      >
+                        {p.price}
+                      </div>
                     </div>
-                  ))}
-                </div>
 
-                <Button href="#contact" variant={p.highlight ? 'primary' : 'ghost'} className="mt-7 w-full">
-                  Get a Quote
-                </Button>
-              </Card>
-            </motion.div>
-          ))}
+                    {hi ? (
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-accent-fg px-3 py-1 font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
+                        <Star className="h-3.5 w-3.5" />
+                        Popular
+                      </span>
+                    ) : null}
+                  </div>
+
+                  <div className="relative mt-6 grid gap-3">
+                    {p.bullets.map((b) => (
+                      <div key={b} className="flex items-center gap-2 text-sm">
+                        <span
+                          className={cn(
+                            'inline-flex h-6 w-6 items-center justify-center rounded-lg ring-1',
+                            hi
+                              ? 'bg-accent-fg/10 text-accent-fg ring-accent-fg/20'
+                              : 'bg-surface-3 text-ink ring-line',
+                          )}
+                        >
+                          <Check className="h-4 w-4" />
+                        </span>
+                        <span
+                          className={cn(
+                            'min-w-0',
+                            hi ? 'text-accent-fg/80' : 'text-muted',
+                          )}
+                        >
+                          {b}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="relative mt-auto pt-7">
+                    <Button
+                      href="#contact"
+                      variant={hi ? 'inverse' : 'ghost'}
+                      className="w-full"
+                    >
+                      Start a Project
+                    </Button>
+                  </div>
+                </div>
+              </motion.div>
+            )
+          })}
         </motion.div>
       </Container>
     </section>

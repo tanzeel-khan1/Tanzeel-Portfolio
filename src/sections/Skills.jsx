@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Code2, Server, Wrench } from 'lucide-react'
+import { ArrowUpRight, Globe, ShieldCheck, Workflow } from 'lucide-react'
 import { skillGroups } from '../content/portfolio'
 import { fadeUp, stagger } from '../lib/motion'
 import { Container } from '../components/ui/Container'
@@ -8,19 +8,19 @@ import { Card } from '../components/ui/Card'
 import { Badge } from '../components/ui/Badge'
 
 const icons = {
-  Frontend: Code2,
-  Backend: Server,
-  Tools: Wrench,
+  Websites: Globe,
+  Systems: Workflow,
+  Reliability: ShieldCheck,
 }
 
 export function Skills() {
   return (
-    <section id="skills" className="relative py-16 sm:py-24">
+    <section id="capabilities" className="relative py-16 sm:py-24">
       <Container>
         <SectionHeading
-          eyebrow="Skills"
-          title="Frontend polish + backend reliability."
-          desc="A focused toolkit for building premium websites and scalable MERN applications."
+          eyebrow="Capabilities"
+          title="Websites that win clients. Systems that save time."
+          desc="Everything I build is designed to help you get more customers or make daily work easier."
         />
 
         <motion.div
@@ -30,23 +30,23 @@ export function Skills() {
           viewport={{ once: true, amount: 0.25 }}
           className="mt-10 grid gap-4 md:grid-cols-3"
         >
-          {skillGroups.map((g) => {
-            const Icon = icons[g.title] ?? Code2
+          {skillGroups.map((g, i) => {
+            const Icon = icons[g.title] ?? Globe
             return (
               <motion.div key={g.title} variants={fadeUp}>
-                <Card className="h-full p-6 transition hover:bg-surface-2 hover:ring-line-strong">
-                  <div className="flex items-center gap-3">
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-accent text-accent-fg">
+                <Card className="flex h-full flex-col p-6">
+                  <div className="flex items-start justify-between">
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-accent text-accent-fg shadow-soft ring-1 ring-line">
                       <Icon className="h-5 w-5" />
                     </span>
-                    <div>
-                      <div className="text-sm font-semibold text-ink">
-                        {g.title}
-                      </div>
-                      <div className="text-xs text-subtle">
-                        Core tools I ship with
-                      </div>
-                    </div>
+                    <span className="font-mono text-[11px] tabular-nums text-subtle/60">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                  </div>
+
+                  <div className="mt-4">
+                    <div className="text-sm font-semibold text-ink">{g.title}</div>
+                    <div className="text-xs text-subtle">Focused on results</div>
                   </div>
 
                   <div className="mt-5 flex flex-wrap gap-2">
@@ -57,8 +57,9 @@ export function Skills() {
                     ))}
                   </div>
 
-                  <div className="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
-                    <div className="absolute -right-16 -bottom-16 h-44 w-44 rounded-full bg-glow blur-2xl" />
+                  <div className="mt-6 flex items-center gap-1 text-xs font-medium text-subtle opacity-100 transition duration-300 md:opacity-0 md:group-hover:opacity-100">
+                    Built with intent
+                    <ArrowUpRight className="h-3.5 w-3.5" />
                   </div>
                 </Card>
               </motion.div>

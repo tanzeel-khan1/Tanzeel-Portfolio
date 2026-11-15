@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { MessageSquare, Monitor, Rocket, Sparkles, Zap } from 'lucide-react'
+import { ArrowUpRight, MessageSquare, Monitor, Rocket, ShieldCheck, Sparkles } from 'lucide-react'
 import { differentiators } from '../content/portfolio'
 import { fadeUp, stagger } from '../lib/motion'
 import { Container } from '../components/ui/Container'
@@ -7,11 +7,11 @@ import { SectionHeading } from '../components/ui/SectionHeading'
 import { Card } from '../components/ui/Card'
 
 const iconByTitle = {
-  'Clean UI': Sparkles,
-  'Responsive Design': Monitor,
-  'Fast Performance': Zap,
-  'Professional Communication': MessageSquare,
-  'Modern UX': Rocket,
+  'Design that builds trust': Sparkles,
+  'Built to grow': Rocket,
+  'Easy to use': Monitor,
+  'Clear communication': MessageSquare,
+  'Reliable delivery': ShieldCheck,
 }
 
 export function WhyMe() {
@@ -20,8 +20,8 @@ export function WhyMe() {
       <Container>
         <SectionHeading
           eyebrow="Why work with me"
-          title="Premium results without the agency price."
-          desc="Clear communication, clean UI, and fast delivery—so you can launch confidently and look high-end."
+          title="Premium quality, without the agency price."
+          desc="Clear communication, careful work, and delivery you can rely on—so you can focus on your business."
         />
 
         <motion.div
@@ -35,16 +35,15 @@ export function WhyMe() {
             const Icon = iconByTitle[d.title] ?? Sparkles
             return (
               <motion.div key={d.title} variants={fadeUp}>
-                <Card className="h-full p-6 transition hover:bg-surface-2 hover:ring-line-strong">
-                  <div className="flex items-center gap-3">
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-accent text-accent-fg">
+                <Card className="h-full p-6">
+                  <div className="flex items-center justify-between">
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-accent text-accent-fg shadow-soft ring-1 ring-line">
                       <Icon className="h-5 w-5" />
                     </span>
-                    <div className="text-sm font-semibold text-ink">{d.title}</div>
+                    <ArrowUpRight className="h-4 w-4 -translate-x-1 translate-y-1 text-subtle opacity-0 transition duration-300 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100" />
                   </div>
-                  <p className="mt-3 text-sm leading-6 text-muted">
-                    {d.description}
-                  </p>
+                  <div className="mt-4 text-sm font-semibold text-ink">{d.title}</div>
+                  <p className="mt-2 text-sm leading-6 text-muted">{d.description}</p>
                 </Card>
               </motion.div>
             )

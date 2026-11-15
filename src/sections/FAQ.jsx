@@ -1,44 +1,78 @@
-import { motion } from 'framer-motion'
-import { HelpCircle } from 'lucide-react'
+import { useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { Plus } from 'lucide-react'
 import { faqs } from '../content/portfolio'
-import { fadeUp, stagger } from '../lib/motion'
+import { cn } from '../lib/cn'
 import { Container } from '../components/ui/Container'
 import { SectionHeading } from '../components/ui/SectionHeading'
-import { Card } from '../components/ui/Card'
 
 export function FAQ() {
+  const [open, setOpen] = useState(0)
+
   return (
     <section className="relative py-16 sm:py-24">
       <Container>
         <SectionHeading
           eyebrow="FAQ"
-          title="Quick answers."
-          desc="If you have a specific requirement, message me and I’ll suggest the best approach."
+          title="Good to know."
+          desc="Have a question before we start? Here are the answers that matter."
         />
 
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.25 }}
-          className="mt-10 grid gap-4 md:grid-cols-2"
-        >
-          {faqs.map((f) => (
-            <motion.div key={f.q} variants={fadeUp}>
-              <Card className="h-full p-6 transition hover:bg-surface-2 hover:ring-line-strong">
-                <div className="flex items-start gap-3">
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-accent text-accent-fg">
-                    <HelpCircle className="h-5 w-5" />
+        <div className="mx-auto mt-10 max-w-3xl space-y-3">
+          {faqs.map((f, i) => {
+            const isOpen = open === i
+            return (
+              <div
+                key={f.q}
+                className={cn(
+                  'overflow-hidden rounded-2xl bg-surface ring-1 transition duration-300',
+                  isOpen ? 'shadow-soft ring-line-strong' : 'ring-line hover:ring-line-strong',
+                )}
+              >
+                <button
+                  type="button"
+                  aria-expanded={isOpen}
+                  onClick={() => setOpen(isOpen ? -1 : i)}
+                  className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left sm:px-6"
+                >
+                  <span className="flex min-w-0 items-center gap-3">
+                    <span className="shrink-0 font-mono text-[10px] tabular-nums text-subtle/60">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <span className="min-w-0 text-sm font-semibold leading-6 text-ink">
+                      {f.q}
+                    </span>
                   </span>
-                  <div>
-                    <div className="text-sm font-semibold text-ink">{f.q}</div>
-                    <p className="mt-2 text-sm leading-6 text-muted">{f.a}</p>
-                  </div>
-                </div>
-              </Card>
-            </motion.div>
-          ))}
-        </motion.div>
+                  <span
+                    className={cn(
+                      'inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-surface-3 text-ink ring-1 ring-line transition duration-300',
+                      isOpen && 'rotate-45 bg-accent text-accent-fg ring-accent',
+                    )}
+                  >
+                    <Plus className="h-4 w-4" />
+                  </span>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isOpen ? (
+                    <motion.div
+                      key="content"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25, ease: 'easeOut' }}
+                      className="overflow-hidden"
+                    >
+                      <p className="px-5 pb-5 text-sm leading-6 text-muted sm:px-6 sm:pl-[3.55rem]">
+                        {f.a}
+                      </p>
+                    </motion.div>
+                  ) : null}
+                </AnimatePresence>
+              </div>
+            )
+          })}
+        </div>
       </Container>
     </section>
   )

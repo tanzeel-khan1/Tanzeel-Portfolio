@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Send } from 'lucide-react'
-import { FaFacebook, FaInstagram, FaLinkedinIn } from 'react-icons/fa6'
+import { ArrowUpRight, Clock, Mail, Send } from 'lucide-react'
+import { FaFacebook, FaInstagram } from 'react-icons/fa6'
 import { profile } from '../content/portfolio'
 import { fadeUp, stagger } from '../lib/motion'
 import { Container } from '../components/ui/Container'
@@ -35,20 +35,22 @@ export function Contact() {
 
   const socials = [
     { label: 'Email', href: `mailto:${profile.email}`, Icon: Mail },
-    { label: 'LinkedIn', href: profile.facebook, Icon: FaFacebook },
+    { label: 'Facebook', href: profile.facebook, Icon: FaFacebook },
     { label: 'Instagram', href: profile.instagram, Icon: FaInstagram },
   ]
 
   const fieldClass =
-    'rounded-2xl bg-page px-4 text-sm text-ink ring-1 ring-line outline-none transition placeholder:text-subtle focus:ring-accent/40'
+    'rounded-xl bg-page px-4 text-sm text-ink ring-1 ring-line outline-none transition ' +
+    'shadow-[inset_0_1px_2px_rgba(0,0,0,0.03)] placeholder:text-subtle ' +
+    'hover:ring-line-strong focus:ring-2 focus:ring-accent/25'
 
   return (
     <section id="contact" className="relative py-16 sm:py-24">
       <Container>
         <SectionHeading
-          eyebrow="Contact"
-          title="Get a quote for your website or web app."
-          desc="Share your goals, pages/features, and timeline. I’ll respond with a clear plan and a price estimate."
+          eyebrow="Let’s work together"
+          title="Tell me what’s slowing your business down."
+          desc="Need more customers or a system that saves time? Share your goal and I’ll reply with a clear plan and price."
         />
 
         <motion.div
@@ -59,18 +61,27 @@ export function Contact() {
           className="mt-10 grid gap-4 lg:grid-cols-2"
         >
           <motion.div variants={fadeUp}>
-            <Card className="h-full p-7 sm:p-8">
-              <div className="text-sm font-semibold text-ink">
-                Request a quote
+            <Card className="flex h-full flex-col p-7 sm:p-8">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <div className="text-sm font-semibold text-ink">Project brief</div>
+                  <p className="mt-2 text-sm leading-6 text-subtle">
+                    This opens your email app—quick and direct.
+                  </p>
+                </div>
+                <span className="inline-flex shrink-0 items-center gap-1.5 self-start rounded-full bg-surface-2 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-subtle ring-1 ring-line">
+                  <Clock className="h-3.5 w-3.5" />
+                  24h reply
+                </span>
               </div>
-              <p className="mt-2 text-sm leading-6 text-subtle">
-                This opens your email client (no backend needed).
-              </p>
 
               <div className="mt-6 grid gap-3">
                 <label className="grid gap-2">
                   <span className="text-xs font-medium text-muted">Name</span>
                   <input
+                    type="text"
+                    name="name"
+                    autoComplete="name"
                     value={form.name}
                     onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
                     className={`h-11 ${fieldClass}`}
@@ -80,6 +91,9 @@ export function Contact() {
                 <label className="grid gap-2">
                   <span className="text-xs font-medium text-muted">Email</span>
                   <input
+                    type="email"
+                    name="email"
+                    autoComplete="email"
                     value={form.email}
                     onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
                     className={`h-11 ${fieldClass}`}
@@ -90,6 +104,7 @@ export function Contact() {
                 <label className="grid gap-2">
                   <span className="text-xs font-medium text-muted">Message</span>
                   <textarea
+                    name="message"
                     value={form.message}
                     onChange={(e) =>
                       setForm((f) => ({ ...f, message: e.target.value }))
@@ -99,7 +114,7 @@ export function Contact() {
                   />
                 </label>
 
-                <Button as="a" href={mailto} variant="primary" className="mt-2">
+                <Button as="a" href={mailto} variant="primary" className="mt-2 w-full">
                   Send Email <Send className="h-4 w-4" />
                 </Button>
               </div>
@@ -107,10 +122,8 @@ export function Contact() {
           </motion.div>
 
           <motion.div variants={fadeUp}>
-            <Card className="h-full p-7 sm:p-8">
-              <div className="text-sm font-semibold text-ink">
-                Quick links
-              </div>
+            <Card className="flex h-full flex-col p-7 sm:p-8">
+              <div className="text-sm font-semibold text-ink">Quick links</div>
               <p className="mt-2 text-sm leading-6 text-subtle">
                 Prefer direct contact? Choose your channel.
               </p>
@@ -122,29 +135,31 @@ export function Contact() {
                     href={href}
                     target={href.startsWith('http') ? '_blank' : undefined}
                     rel={href.startsWith('http') ? 'noreferrer' : undefined}
-                    className="group flex items-center gap-3 rounded-2xl bg-surface-2 p-4 ring-1 ring-line transition hover:bg-surface-3 hover:ring-line-strong"
+                    className="group/link flex items-center gap-3 rounded-xl bg-surface-2 p-4 ring-1 ring-line transition hover:-translate-y-0.5 hover:bg-surface-3 hover:ring-line-strong"
                   >
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-accent text-accent-fg">
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-accent text-accent-fg shadow-soft ring-1 ring-line">
                       <Icon className="h-5 w-5" />
                     </span>
-                    <div>
-                      <div className="text-sm font-semibold text-ink">
-                        {label}
-                      </div>
-                      <div className="text-xs text-subtle">
-                        {label === 'Email' ? profile.email : 'Open'}
+                    <div className="min-w-0 flex-1">
+                      <div className="text-sm font-semibold text-ink">{label}</div>
+                      <div className="truncate text-xs text-subtle">
+                        {label === 'Email' ? profile.email : 'Open profile'}
                       </div>
                     </div>
+                    <ArrowUpRight className="h-4 w-4 shrink-0 text-subtle opacity-0 transition group-hover/link:opacity-100" />
                   </a>
                 ))}
               </div>
 
-              <div className="mt-6 rounded-2xl bg-surface-2 p-4 ring-1 ring-line">
-                <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-subtle">
-                  Availability
-                </div>
-                <div className="mt-1 text-sm text-muted">
-                  Available for freelance — websites, landing pages & MERN apps.
+              <div className="mt-auto pt-6">
+                <div className="rounded-xl bg-surface-2 p-4 ring-1 ring-line">
+                  <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-subtle">
+                    <span className="h-1.5 w-1.5 rounded-full bg-ink" aria-hidden />
+                    Availability
+                  </div>
+                  <div className="mt-1.5 text-sm text-muted">
+                    Now booking projects — websites, custom systems & redesigns.
+                  </div>
                 </div>
               </div>
             </Card>
