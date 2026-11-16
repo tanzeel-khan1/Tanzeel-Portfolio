@@ -16,13 +16,24 @@ function ProjectMedia({ title, image }) {
   return (
     <div className="relative m-2 mb-0 overflow-hidden rounded-xl bg-surface-2 ring-1 ring-line">
       {showImage ? (
-        <img
-          src={image}
-          alt={title}
-          loading="lazy"
-          className="aspect-[16/9] w-full object-cover transition duration-700 ease-out group-hover:scale-[1.04]"
-          onError={() => setFailed(true)}
-        />
+        <>
+          <div className="aspect-[16/9] w-full">
+            <img
+              src={image}
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+              className="h-full w-full scale-110 object-cover blur-xl opacity-50"
+            />
+          </div>
+          <img
+            src={image}
+            alt={title}
+            loading="lazy"
+            className="absolute inset-0 h-full w-full object-contain"
+            onError={() => setFailed(true)}
+          />
+        </>
       ) : (
         <div className="aspect-[16/9] w-full bg-[radial-gradient(700px_circle_at_30%_30%,var(--glow),transparent_60%),radial-gradient(700px_circle_at_70%_70%,var(--glow),transparent_60%)] bg-surface-2" />
       )}
