@@ -65,12 +65,12 @@ export const projects = [
     image: "ranvola.png",
   },
   {
-    title: "Real Estate Website",
+    title: "Restaurant management system",
     description:
-      "A premium property website with smart filters and quick enquiry flows that help agents turn browsers into buyers.",
-    stack: ["Website", "Property Listings", "Enquiry Flow"],
-    image: "/real.png",
-    demoUrl: "https://real-estate-7mef.vercel.app",
+      "A comprehensive solution for managing restaurant operations, from order taking to inventory control.",
+    stack: ["SaaS", "Restaurant Management", "Order Processing", "Inventory Control"],
+    image: "/restaurant.png",
+    demoUrl: "https://restaurantsystem-six.vercel.app",
   },
 ];
 
