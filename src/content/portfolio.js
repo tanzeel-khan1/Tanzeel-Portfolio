@@ -44,7 +44,7 @@ export const projects = [
     title: "Salon Website",
     description:
       "A premium booking website for a modern salon—clients explore services and book appointments effortlessly, while the brand looks high-end.",
-    stack: ["Website", "Booking Flow", "Mobile-friendly"],
+    stack: ["Website", "Booking Flow", "Mobile-friendly", "Salon", "appointment"],
     image: "/yoursalon.png",
     demoUrl: "https://yourstudia.netlify.app",
   },
@@ -52,7 +52,7 @@ export const projects = [
     title: "Clothing Brand",
     description:
       "A fashion-forward online store with smooth motion and a clean shopping flow that turns visitors into customers.",
-    stack: ["Online Store", "Motion", "Mobile-first"],
+    stack: ["Online Store", "Motion", "Clothing store", "E-commerce"],
     image: "clo.png",
     demoUrl: "https://clothing-brand-demo-plum.vercel.app",
   },
