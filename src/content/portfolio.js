@@ -60,8 +60,8 @@ export const projects = [
     title: "Ranvola – Real Estate Workspace",
     description:
       "An all-in-one workspace for real estate professionals to manage properties, clients, business operations, and collect client reviews through a public profile.",
-    stack: ["SaaS", "Real Estate", "Client Reviews", "Dashboard"],
-    demoUrl: "https://app.tanzilbuilds.xyz",
+    stack: ["SaaS", "Real Estate", "Client Reviews", "System"],
+    demoUrl: "http://ranvola.tanzilbuilds.xyz",
     image: "ranvola.png",
   },
   {
